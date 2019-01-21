@@ -1,0 +1,216 @@
+[
+  {
+    "id": "builtin_text-pSsHWg",
+    "formData": {
+      "text": "👋, {{user.nickname}}!",
+      "variations": [
+        "Hello, {{user.nickname}}!",
+        "Welcome to Botpress, {{user.nickname}}!"
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T00:57:36.026Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-AY5SSW",
+    "formData": {
+      "text": "This is the first time we speak 🤖",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T00:59:51.118Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-bFsOmf",
+    "formData": {
+      "text": "We already spoke {{temp.$r}} times!",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T01:00:37.593Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-TtzrCV",
+    "formData": {
+      "text": "Alright, I have forgotten your name.",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T01:06:41.963Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-z0J9qh",
+    "formData": {
+      "text": "May I know your name please?",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T01:08:41.241Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-X069Le",
+    "formData": {
+      "text": "Try saying something like \"forget my name\"!",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T01:16:53.227Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-kKQ8C3",
+    "formData": {
+      "text": "(To see how this works, double-click anywhere on the flow and go to the \"Transitions\" panel)",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-14T01:17:55.317Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_text-Jn~Xvz",
+    "formData": {
+      "text": "D'accord, quelle est la couleur de votre poubelle ?",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T08:56:09.581Z",
+    "modifiedOn": "2019-01-16T08:56:09.581Z"
+  },
+  {
+    "id": "builtin_text-1GQYQq",
+    "formData": {
+      "text": "Merci de remplir le formulaire disponible en cliquant sur le lien suivant :\n<a href=\"http://www.gtmutu.fr\">Formulaire</a>",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:16:08.081Z",
+    "modifiedOn": "2019-01-16T09:50:58.853Z"
+  },
+  {
+    "id": "builtin_text-ihubsV",
+    "formData": {
+      "text": "Merci de faire remplir le formulaire disponible en cliquant sur le lien suivant a votre propriétaire afin de faire la demande :\n<a href=\"http://www.gtmutu.fr\">Formulaire</a>",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:17:47.187Z",
+    "modifiedOn": "2019-01-16T09:51:12.837Z"
+  },
+  {
+    "id": "builtin_text-4xIjXe",
+    "formData": {
+      "text": "Bonjour, je suis PaLyNi, pour toute question sur vos déchets et encombrants, je suis le bot de la situation !",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:25:51.121Z",
+    "modifiedOn": "2019-01-16T09:25:51.121Z"
+  },
+  {
+    "id": "builtin_text-q66kaq",
+    "formData": {
+      "text": "Les frais sont inclus dans vos impôts fonciers.",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:35:10.510Z",
+    "modifiedOn": "2019-01-16T09:39:28.750Z"
+  },
+  {
+    "id": "builtin_text-wgfUBv",
+    "formData": {
+      "text": "10 jours ouvrés maximum à compter de la réception de votre demande.",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:37:12.806Z",
+    "modifiedOn": "2019-01-16T09:37:12.806Z"
+  },
+  {
+    "id": "builtin_text-UwJ5jF",
+    "formData": {
+      "text": "Zéro déchet &#9786;",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:41:32.619Z",
+    "modifiedOn": "2019-01-16T11:04:43.439Z"
+  },
+  {
+    "id": "builtin_text-TDLTdE",
+    "formData": {
+      "text": "Je suis désolé mais je n'ai pas compris votre message :(",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T10:33:31.968Z",
+    "modifiedOn": "2019-01-16T10:33:31.968Z"
+  },
+  {
+    "id": "builtin_text-c43y~I",
+    "formData": {
+      "text": "Je suis désolé mais je n'ai pas compris votre réponse, merci de sélectionner une des valeurs proposées :)",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T10:39:50.947Z",
+    "modifiedOn": "2019-01-16T10:39:50.947Z"
+  },
+  {
+    "id": "builtin_text-LoyVyN",
+    "formData": {
+      "text": "Je transmets votre demande au service de nettoiement. Un technicien se rendra sur place pour identifier la nature du dépôt\n \nPour cela, merci de préciser la nature du problème en cliquant <a href=\"http://www.google.fr\">ici</a>.",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T11:08:24.569Z",
+    "modifiedOn": "2019-01-16T11:08:24.569Z"
+  },
+  {
+    "id": "builtin_text-niDi6h",
+    "formData": {
+      "text": "D'accord. Pouvez-vous m'indiquer votre adresse ? ",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T11:09:22.511Z",
+    "modifiedOn": "2019-01-16T11:12:08.025Z"
+  },
+  {
+    "id": "builtin_text-5Rb8oR",
+    "formData": {
+      "text": "J'ai bien identifié que vous habitez à {{user.address}}.",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T11:12:49.690Z",
+    "modifiedOn": "2019-01-16T13:42:46.582Z"
+  },
+  {
+    "id": "builtin_text-EN~1cD",
+    "formData": {
+      "text": "Votre collecte peut encore être réalisée faire jusqu'à 13h",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T11:13:30.096Z",
+    "modifiedOn": "2019-01-16T13:43:20.142Z"
+  },
+  {
+    "id": "builtin_text-etesgI",
+    "formData": {
+      "text": "{{event.text}} !",
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T13:34:13.711Z",
+    "modifiedOn": "2019-01-16T13:35:03.130Z"
+  }
+]

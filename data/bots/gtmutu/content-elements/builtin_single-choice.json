@@ -1,0 +1,106 @@
+[
+  {
+    "id": "builtin_single-choice-elJyV5",
+    "formData": {
+      "text": "a",
+      "choices": [
+        {
+          "title": "1",
+          "value": "1"
+        },
+        {
+          "title": "2",
+          "value": "2"
+        }
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2018-05-17T14:29:04.897Z",
+    "modifiedOn": null
+  },
+  {
+    "id": "builtin_single-choice-L80Str",
+    "formData": {
+      "text": "Quelle est la couleur de votre poubelle ?",
+      "choices": [
+        {
+          "title": "Jaune",
+          "value": "Jaune"
+        },
+        {
+          "title": "Vert",
+          "value": "Vert"
+        },
+        {
+          "title": "Bleu",
+          "value": "Bleu"
+        }
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T08:57:28.446Z",
+    "modifiedOn": "2019-01-16T10:45:59.594Z"
+  },
+  {
+    "id": "builtin_single-choice-Rm3Sso",
+    "formData": {
+      "text": "Quel est le volume de votre poubelle ?",
+      "choices": [
+        {
+          "title": "150",
+          "value": "150"
+        },
+        {
+          "title": "300",
+          "value": "300"
+        }
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:01:10.347Z",
+    "modifiedOn": "2019-01-16T09:01:10.347Z"
+  },
+  {
+    "id": "builtin_single-choice-RdI01P",
+    "formData": {
+      "text": "Etes-vous propriétaire de votre logement ?",
+      "choices": [
+        {
+          "title": "Oui",
+          "value": "Oui"
+        },
+        {
+          "title": "Non",
+          "value": "Non"
+        }
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T09:13:03.752Z",
+    "modifiedOn": "2019-01-16T09:13:03.752Z"
+  },
+  {
+    "id": "builtin_single-choice-CDbzG0",
+    "formData": {
+      "text": "J'ai compris qu'il y a un problème concernant la collecte des déchets.  Est-ce que cela concerne :",
+      "choices": [
+        {
+          "title": "Ramassage",
+          "value": "Ramassage"
+        },
+        {
+          "title": "Dépôt Sauvage",
+          "value": "Dépôt"
+        }
+      ],
+      "typing": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-01-16T10:57:54.311Z",
+    "modifiedOn": "2019-01-16T10:58:29.956Z"
+  }
+]

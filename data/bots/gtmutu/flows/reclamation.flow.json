@@ -1,0 +1,90 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "f9c7c8c7c9",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "choix"
+        }
+      ]
+    },
+    {
+      "id": "skill-9b1224",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choix",
+      "flow": "skills/choice-9b1224.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Ramassa...]",
+          "condition": "temp['skill-choice-ret'] == \"Ramassage\"",
+          "node": "Ramassage"
+        },
+        {
+          "caption": "User picked [Dépôt]",
+          "condition": "temp['skill-choice-ret'] == \"Dépôt\"",
+          "node": "Depot"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "87f2f8c0c6",
+      "name": "Depot",
+      "next": [
+        {
+          "condition": "true",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-LoyVyN"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "aaed23c900",
+      "name": "Ramassage",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Adresse"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-niDi6h"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"address\",\"value\":\"{{event.payload.text}}\"}"
+      ]
+    },
+    {
+      "id": "f695a84d05",
+      "name": "Adresse",
+      "next": [
+        {
+          "condition": "true",
+          "node": "END"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-5Rb8oR",
+        "say #!builtin_text-EN~1cD"
+      ],
+      "onReceive": null
+    }
+  ]
+}

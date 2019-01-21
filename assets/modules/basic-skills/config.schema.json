@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "defaultContentElement": {
+      "default": "builtin_single-choice",
+      "type": "string"
+    },
+    "defaultContentRenderer": {
+      "default": "#builtin_single-choice",
+      "type": "string"
+    },
+    "defaultMaxAttempts": {
+      "default": 3,
+      "type": "number"
+    },
+    "disableIntegrityCheck": {
+      "default": true,
+      "type": "boolean"
+    },
+    "matchNumbers": {
+      "default": true,
+      "type": "boolean"
+    },
+    "matchNLU": {
+      "default": true,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "defaultContentElement",
+    "defaultContentRenderer",
+    "defaultMaxAttempts",
+    "disableIntegrityCheck",
+    "matchNLU",
+    "matchNumbers"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+

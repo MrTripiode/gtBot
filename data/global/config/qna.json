@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../assets/modules/qna/config.schema.json",
+  "qnaDir": "./qna",
+  "textRenderer": "#builtin_text",
+  "exportCsvEncoding": "utf8",
+  "qnaMakerKnowledgebase": "botpress"
+}

@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "description": "An identifier for the bot, represents the folder name on the file system. It is also used in the URL",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the bot, used for display purpose only",
+      "type": "string"
+    },
+    "active": {
+      "default": true,
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "version": {
+      "default": "1.0.0",
+      "type": "string"
+    },
+    "imports": {
+      "type": "object",
+      "properties": {
+        "contentTypes": {
+          "description": "An array of content types that will be available using this bot",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "contentTypes"
+      ]
+    },
+    "dialog": {
+      "$ref": "#/definitions/DialogConfig"
+    },
+    "logs": {
+      "$ref": "#/definitions/LogsConfig"
+    }
+  },
+  "required": [
+    "active",
+    "id",
+    "imports",
+    "name",
+    "version"
+  ],
+  "definitions": {
+    "DialogConfig": {
+      "type": "object",
+      "properties": {
+        "timeoutInterval": {
+          "default": "5m",
+          "type": "string"
+        },
+        "sessionTimeoutInterval": {
+          "default": "30m",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sessionTimeoutInterval",
+        "timeoutInterval"
+      ]
+    },
+    "LogsConfig": {
+      "type": "object",
+      "properties": {
+        "expiration": {
+          "description": "Logs will be kept in the database for this period of time",
+          "default": "1 week",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expiration"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+

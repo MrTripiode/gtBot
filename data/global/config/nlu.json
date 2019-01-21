@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../assets/modules/nlu/config.schema.json",
+  "intentsDir": "./intents",
+  "entitiesDir": "./entities",
+  "modelsDir": "./models",
+  "confidenceTreshold": 0.7,
+  "ducklingURL": "https://duckling.botpress.io",
+  "ducklingEnabled": true
+}

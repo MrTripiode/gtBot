@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  chatbot:
+    build: .
+    volumes:
+      - ./:/gtmutu
+    command: /gtmutu/bp
+    ports:
+      - "3000:3000"

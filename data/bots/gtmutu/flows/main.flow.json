@@ -1,0 +1,39 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": [
+      {
+        "condition": "event.nlu.intent.name === 'forget'",
+        "node": "forget-my-name"
+      }
+    ]
+  },
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "a54a82eb7c",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "event.nlu.intent.name === 'garbagelost'",
+          "node": "garbagelost.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'hello'",
+          "node": "hello.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'reclamation'",
+          "node": "reclamation.flow.json"
+        },
+        {
+          "condition": "true",
+          "node": "dontunderstand.flow.json"
+        }
+      ]
+    }
+  ]
+}

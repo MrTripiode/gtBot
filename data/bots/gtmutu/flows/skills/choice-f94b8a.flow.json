@@ -1,0 +1,87 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "contentId": "builtin_single-choice-L80Str",
+    "keywords": {
+      "Jaune": [
+        "Jaune"
+      ],
+      "Vert": [
+        "Vert"
+      ],
+      "Bleu": [
+        "Bleu"
+      ]
+    },
+    "config": {
+      "invalidText": "Je n'ai pas compris votre réponse, merci de sélectionner un des choix suivants"
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-L80Str {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "614128"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"contentId\":\"builtin_single-choice-L80Str\",\"keywords\":{\"Jaune\":[\"Jaune\"],\"Vert\":[\"Vert\"],\"Bleu\":[\"Bleu\"]},\"config\":{\"invalidText\":\"Je n'ai pas compris votre réponse, merci de sélectionner un des choix suivants\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "onEnter": [],
+      "id": "990588"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-invalid-count'] <= undefined",
+          "node": "sorry"
+        },
+        {
+          "condition": "true",
+          "node": "#"
+        }
+      ],
+      "id": "882204"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [
+        "say #!builtin_single-choice-L80Str {\"skill\":\"choice\",\"text\":\"Je n'ai pas compris votre réponse, merci de sélectionner un des choix suivants\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "480448"
+    }
+  ]
+}

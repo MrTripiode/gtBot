@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "intentsDir": {
+      "default": "./intents",
+      "type": "string"
+    },
+    "entitiesDir": {
+      "default": "./entities",
+      "type": "string"
+    },
+    "modelsDir": {
+      "default": "./models",
+      "type": "string"
+    },
+    "fastTextPath": {
+      "description": "If you compiled fastText yourself and need to point to its location\nIn most cases you shouldn't have to set this as we ship with pre-built fastText binaries",
+      "type": "string"
+    },
+    "confidenceTreshold": {
+      "description": "The minimum confidence required (in %) for an intent to match\nSet to '0' to always match",
+      "default": 0.7,
+      "type": "number"
+    },
+    "ducklingURL": {
+      "description": "If you want a fully on-prem installation, you can host\nFacebook's Duckling on your own infrastructure and change this URL\nOnly relevant if @see ducklingEnabled is true",
+      "default": "https://duckling.botpress.io",
+      "type": "string"
+    },
+    "ducklingEnabled": {
+      "description": "Duckling",
+      "default": true,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "confidenceTreshold",
+    "ducklingEnabled",
+    "ducklingURL",
+    "entitiesDir",
+    "intentsDir",
+    "modelsDir"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+

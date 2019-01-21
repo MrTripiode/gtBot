@@ -1,0 +1,242 @@
+{
+  "type": "object",
+  "properties": {
+    "jwtSecret": {
+      "type": "string"
+    },
+    "httpServer": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "default": "localhost",
+          "type": "string"
+        },
+        "port": {
+          "default": 3000,
+          "type": "number"
+        },
+        "backlog": {
+          "default": 0,
+          "type": "number"
+        },
+        "bodyLimit": {
+          "default": "100kb",
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "cors": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "default": true,
+              "type": "boolean"
+            },
+            "origin": {
+              "type": "string"
+            }
+          }
+        },
+        "externalUrl": {
+          "description": "Represents the complete base URL exposed externally by your bot. This is useful if you configure the bot\nlocally and use NGINX as a reverse proxy to handle HTTPS. It should include the protocol and no trailing slash.\nIf unset, it will be constructed from the real host/port",
+          "type": "string"
+        }
+      },
+      "required": [
+        "backlog",
+        "bodyLimit",
+        "cors",
+        "host",
+        "port"
+      ]
+    },
+    "database": {
+      "$ref": "#/definitions/DatabaseConfig"
+    },
+    "ghost": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "default": false,
+          "enum": [
+            "$isDevelopment",
+            "$isProduction",
+            false,
+            true
+          ]
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    },
+    "dialog": {
+      "$ref": "#/definitions/DialogConfig"
+    },
+    "logs": {
+      "$ref": "#/definitions/LogsConfig"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "enabled",
+          "location"
+        ]
+      }
+    },
+    "licenseKey": {
+      "description": "The license key for the server.  Optionally you can use the BP_LICENSE_KEY env variable.\nYou can purchase a license on https://botpress.io\nFor usage with Botpress Pro/Enterprise.",
+      "default": "paste your license key here",
+      "type": "string"
+    },
+    "sendUsageStats": {
+      "description": "When enabled, Botpress collects anonymous data about the bot's usage",
+      "default": true,
+      "type": "boolean"
+    },
+    "dataRetention": {
+      "$ref": "#/definitions/DataRetentionConfig",
+      "description": "When this feature is enabled, fields saved as user attributes will be automatically erased when they expires. The timer is reset each time the value is modified\nSetting a policy called \"email\": \"30d\" means that once an email is set, it will be removed in 30 days, unless it is changed in that timespan"
+    }
+  },
+  "required": [
+    "database",
+    "dialog",
+    "ghost",
+    "httpServer",
+    "jwtSecret",
+    "licenseKey",
+    "logs",
+    "modules",
+    "sendUsageStats"
+  ],
+  "definitions": {
+    "DatabaseConfig": {
+      "type": "object",
+      "properties": {
+        "migrations": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/DatabaseType",
+          "default": "sqlite"
+        },
+        "url": {
+          "type": "string"
+        },
+        "location": {
+          "default": "%BOTPRESS_DIR%/data/storage/core.sqlite",
+          "type": "string"
+        },
+        "host": {
+          "default": "localhost",
+          "type": "string"
+        },
+        "port": {
+          "default": 5432,
+          "type": "number"
+        },
+        "user": {
+          "default": "postgres",
+          "type": "string"
+        },
+        "password": {
+          "default": "",
+          "type": "string"
+        },
+        "ssl": {
+          "type": "boolean"
+        },
+        "database": {
+          "default": "botpress_test",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "DatabaseType": {
+      "enum": [
+        "postgres",
+        "sqlite"
+      ],
+      "type": "string"
+    },
+    "DialogConfig": {
+      "type": "object",
+      "properties": {
+        "janitorInterval": {
+          "description": "Interval between executions of the janitor to check for stale sessions",
+          "default": "10s",
+          "type": "string"
+        },
+        "timeoutInterval": {
+          "description": "The delay before a stale session will get sweeped by the janitor",
+          "default": "2m",
+          "type": "string"
+        },
+        "sessionTimeoutInterval": {
+          "description": "The delay before we consider that it is a new interaction (ex: different subject). We keep the user's last messages\nand variables in the session context to customize interactions.",
+          "default": "30m",
+          "type": "string"
+        }
+      },
+      "required": [
+        "janitorInterval",
+        "sessionTimeoutInterval",
+        "timeoutInterval"
+      ]
+    },
+    "LogsConfig": {
+      "type": "object",
+      "properties": {
+        "expiration": {
+          "description": "Logs will be kept for this amount of time in the database",
+          "default": "2 weeks",
+          "type": "string"
+        },
+        "janitorInterval": {
+          "default": "30s",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expiration",
+        "janitorInterval"
+      ]
+    },
+    "DataRetentionConfig": {
+      "type": "object",
+      "properties": {
+        "janitorInterval": {
+          "description": "The janitor will check for expired fields at the set interval (second, minute, hour, day)",
+          "type": "string"
+        },
+        "policies": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "janitorInterval",
+        "policies"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+

@@ -1,0 +1,211 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "entry",
+  "nodes": [
+    {
+      "id": "skill-f94b8a",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Couleur_Poubelle",
+      "flow": "skills/choice-f94b8a.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Jaune]",
+          "condition": "temp['skill-choice-ret'] == \"Jaune\"",
+          "node": "choice-63f391"
+        },
+        {
+          "caption": "User picked [Vert]",
+          "condition": "temp['skill-choice-ret'] == \"Vert\"",
+          "node": "choice-63f391"
+        },
+        {
+          "caption": "User picked [Bleu]",
+          "condition": "temp['skill-choice-ret'] == \"Bleu\"",
+          "node": "choice-63f391"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "bad_response"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "a875955452",
+      "name": "Proprietaire",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Attente_Question"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-1GQYQq"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "3179de7eb1",
+      "name": "Non_Proprietaire",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Attente_Question"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ihubsV"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "d74fd41e7d",
+      "name": "entry",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Couleur_Poubelle"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null
+    },
+    {
+      "id": "326b1cd1d9",
+      "name": "Surcout",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Attente_Question"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-q66kaq"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "6ff05f47a7",
+      "name": "Delai",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Attente_Question"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-wgfUBv"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "4880f3fa45",
+      "name": "Dechets",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Attente_Question"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-UwJ5jF"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "e0a7008b4f",
+      "name": "Attente_Question",
+      "next": [
+        {
+          "condition": "event.nlu.intent.name === 'surcout'",
+          "node": "Surcout"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'delai'",
+          "node": "Delai"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'dechets'",
+          "node": "Dechets"
+        },
+        {
+          "condition": "true",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": []
+    },
+    {
+      "id": "skill-63f391",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-63f391",
+      "flow": "skills/choice-63f391.flow.json",
+      "next": [
+        {
+          "caption": "User picked [150]",
+          "condition": "temp['skill-choice-ret'] == \"150\"",
+          "node": "choice-a71307"
+        },
+        {
+          "caption": "User picked [300]",
+          "condition": "temp['skill-choice-ret'] == \"300\"",
+          "node": "choice-a71307"
+        },
+        {
+          "condition": "true",
+          "node": "bad_response"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "skill-a71307",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-a71307",
+      "flow": "skills/choice-a71307.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Oui]",
+          "condition": "temp['skill-choice-ret'] == \"Oui\"",
+          "node": "Proprietaire"
+        },
+        {
+          "caption": "User picked [Non]",
+          "condition": "temp['skill-choice-ret'] == \"Non\"",
+          "node": "Non_Proprietaire"
+        },
+        {
+          "condition": "true",
+          "node": "bad_response"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "bcbc903d43",
+      "name": "bad_response",
+      "next": [
+        {
+          "condition": "true",
+          "node": "entry"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-c43y~I"
+      ],
+      "onReceive": null
+    }
+  ]
+}

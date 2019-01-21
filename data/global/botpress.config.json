@@ -1,0 +1,65 @@
+{
+  "$schema": "../../botpress.config.schema.json",
+  "httpServer": {
+    "host": "localhost",
+    "port": 3000,
+    "backlog": 0,
+    "bodyLimit": "100kb",
+    "cors": {
+      "enabled": true
+    }
+  },
+  "database": {
+    "type": "sqlite",
+    "location": "%BOTPRESS_DIR%/data/storage/core.sqlite",
+    "host": "localhost",
+    "port": 5432,
+    "user": "postgres",
+    "password": "",
+    "database": "botpress_test"
+  },
+  "ghost": {
+    "enabled": false
+  },
+  "dialog": {
+    "janitorInterval": "10s",
+    "timeoutInterval": "2m",
+    "sessionTimeoutInterval": "30m"
+  },
+  "logs": {
+    "expiration": "2 weeks",
+    "janitorInterval": "30s"
+  },
+  "modules": [
+    {
+      "location": "MODULES_ROOT/analytics",
+      "enabled": true
+    },
+    {
+      "location": "MODULES_ROOT/basic-skills",
+      "enabled": true
+    },
+    {
+      "location": "MODULES_ROOT/builtin",
+      "enabled": true
+    },
+    {
+      "location": "MODULES_ROOT/channel-web",
+      "enabled": true
+    },
+    {
+      "location": "MODULES_ROOT/nlu",
+      "enabled": true
+    },
+    {
+      "location": "MODULES_ROOT/qna",
+      "enabled": true
+    }
+  ],
+  "licenseKey": "paste your license key here",
+  "sendUsageStats": true,
+  "dataRetention": {
+    "policies": {}
+  },
+  "jwtSecret": "iM5jzNRVGlY0CrmGvFxacW1y0siunym8qnPpj9mS"
+}
