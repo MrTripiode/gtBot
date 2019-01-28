@@ -1,0 +1,47 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _lodash = _interopRequireDefault(require("lodash"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+class Parser {
+  extractLabelsFromCanonical(canonicalUtterance, intentEntities) {
+    const labels = [];
+    let plainText = '';
+    const regex = /\[(.+?)]\((.+?)\)/g;
+    let m;
+    let i = 0;
+
+    do {
+      m = regex.exec(canonicalUtterance);
+
+      if (m) {
+        plainText += canonicalUtterance.substr(i, m.index - i);
+        i = m.index + m[0].length;
+        plainText += m[1];
+        labels.push({
+          start: plainText.length - m[1].length,
+          end: plainText.length - 1,
+          entityName: m[2],
+          type: _lodash.default.get(_lodash.default.find(intentEntities, {
+            name: m[2]
+          }), 'type')
+        });
+      }
+    } while (m);
+
+    plainText += canonicalUtterance.substr(i, canonicalUtterance.length - i);
+    return {
+      text: plainText,
+      labels: labels
+    };
+  }
+
+}
+
+exports.default = Parser;
